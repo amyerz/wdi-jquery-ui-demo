@@ -1,3 +1,4 @@
 $(document).ready(function(){
-  console.log(':)')
-})
+  // Drag Picard around.
+  $("#picard" ).draggable();
+});
