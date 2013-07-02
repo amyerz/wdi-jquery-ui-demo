@@ -4,4 +4,24 @@ $(document).ready(function(){
 
   // Make Accordion into an accordion.
   $("#accordion").accordion();
+
+  // --------------------------------------------------------------------------
+  // Make Age a slider.
+
+  // Set variables for elements.
+  var age_header = $("#age");
+  var hidden_age_field = $("<input type='hidden' id='hidden_age_field' val='' />");
+  hidden_age_field.insertAfter(age_header);
+
+  // This variable contain the slider.
+  var age_slider = $("<div id='slider'></div>").insertAfter(age_header);
+
+  age_slider.slider({
+    min: 1,
+    max: 6,
+    value: 1, // Initial Value
+    slide: function(event, slider_element) {
+      hidden_age_field.val(slider_element.value);
+    }
+  });
 });
