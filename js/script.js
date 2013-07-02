@@ -24,4 +24,43 @@ $(document).ready(function(){
       hidden_age_field.val(slider_element.value);
     }
   });
+
+  // --------------------------------------------------------------------------
+  // Animate
+
+  var animate_bio = function(){
+    $("#bio").animate({
+      backgroundColor: 'red'
+    }, 1000);
+  }
+
+  $("#animate").on("click", animate_bio);
+
+  // --------------------------------------------------------------------------
+  // Show
+  var do_a_callback = function(){
+    alert("Nice moves, Picard.");
+  };
+
+  var show_picard_bouncer = function(){
+    $("#picard_bouncer").show('bounce', {}, 4000, do_a_callback);
+  };
+
+  $("#show").on("click", show_picard_bouncer);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
