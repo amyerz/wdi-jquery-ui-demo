@@ -1,7 +1,49 @@
 $(document).ready(function(){
+
+  // AJAX!
+  var response_area = $("#response");
+
+  var do_this_before = function(){
+    // Got this from http://www.ajaxload.info
+    response_area.html('<img src="ajax-loader.gif" />');
+  };
+
+  var do_this_after = function(){
+    response_area.text("Received response.");
+  }
+
+  var data_object = {
+    name: "Sumeet",
+    age: 27,
+    height: 'tall'
+  }
+
+  var my_amazing_ajax_button = function(){
+    $.ajax({
+      // The following two lines are a 'route':
+      type: "GET", // METHOD (e.g. "GET")
+      url: "http://examples.webscript.io/coinflip", // ADDRESS (e.g. "/tasks/new")
+
+      // data: data_object,
+
+      // This runs right before the request is sent:
+      beforeSend: do_this_before,
+
+      // This runs right after the response is received.
+      complete: function(response, status_text){
+        console.log(response.responseText);
+        console.log(status_text);
+      }
+    });
+  };
+
+  $("#ajax_button").on("click", my_amazing_ajax_button);
+
+  // --------------------------------------------------------------------------
   // Drag Picard around.
   $("#picard" ).draggable();
 
+  // --------------------------------------------------------------------------
   // Make Accordion into an accordion.
   $("#accordion").accordion();
 
