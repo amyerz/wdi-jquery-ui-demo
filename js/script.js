@@ -48,19 +48,3 @@ $(document).ready(function(){
 
   $("#show").on("click", show_picard_bouncer);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
